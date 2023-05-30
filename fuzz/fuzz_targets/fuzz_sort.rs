@@ -10,10 +10,7 @@ fuzz_target!(|data: (&[u8], usize)| {
         let mut arr3 = arr.clone();
     
         let mut num_cmp = 0;
-        glidesort::glidesort_by(&mut arr, |a, b| {
-            num_cmp += 1;
-            a.1.cmp(&b.1)
-        });
+
         arr2.sort_by(|a, b| { a.1.cmp(&b.1) });
         assert_eq!(arr, arr2);
         

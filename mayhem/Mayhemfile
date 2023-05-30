@@ -1,0 +1,5 @@
+project: glidesort
+target: fuzz_sort
+
+cmds:
+    - cmd: /fuzz_sort
