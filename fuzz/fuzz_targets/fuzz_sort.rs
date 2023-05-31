@@ -3,7 +3,7 @@
 use libfuzzer_sys::fuzz_target;
 use core::cell::Cell;
 
-fuzz_target!(|data: (&[u8], usize)| {
+fuzz_target!(|data: (&[u8])| {
     let _ = std::panic::catch_unwind(|| {
         let mut arr: Vec<(u8, u8)> = data.0.chunks_exact(2).map(|c| (c[0], c[1])).collect();
         let mut arr2 = arr.clone();
